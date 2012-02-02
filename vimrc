@@ -35,19 +35,11 @@ syn on
 nnoremap ; :
 nnoremap : ;
 
-"nnoremap <C-o>      :<C-u>Unite buffer<CR>
-"nnoremap <C-o><C-y> :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-
 imap jj <ESC>
 imap <C-d> <DEL>
 imap <C-e> <END>
 imap <C-a> <HOME>
 imap <C-k> <ESC><RIGHT>C
-
-"let g:closetag_html_style=1 
-"source ~/.vim/scripts/closetag.vim 
-
-"au QuickfixCmdPost vimgrep cw
 
 imap ,/ </<C-X><C-O><ESC>F<i
 inoremap \[ [
@@ -62,17 +54,14 @@ inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 
 
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-filetype plugin on
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-" reload vim
-" gives you the key bindings
-" <Leader>j !reload js  # pipes js from your buffer, selection to your browser
-" <Leader>c !reload css # pipes css from your buffer, selection to your browser
-" <Leader>r !reload refresh
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-"au FileType php set omnifunc=phpcomplete#CompletePHP
-"let php_sql_query=1                                                                                        
-"let php_htmlInStrings=1
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+filetype plugin indent on

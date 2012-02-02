@@ -34,3 +34,4 @@ bindkey -e
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
+export NODE_PATH=/usr/local/lib/node_modules
