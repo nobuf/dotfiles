@@ -24,7 +24,7 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow github brew heroku node npm osx ruby rvm vundle)
+plugins=(git git-flow github brew heroku node npm osx ruby rvm vundle rails)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,3 +35,5 @@ bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
 export NODE_PATH=/usr/local/lib/node_modules
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

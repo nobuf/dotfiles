@@ -63,5 +63,8 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
+Bundle 'paulyg/Vim-PHP-Stuff'
+Bundle 'tobiassvn/vim-gemfile'
+Bundle 'tpope/vim-rails'
 
 filetype plugin indent on
