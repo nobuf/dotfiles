@@ -66,5 +66,6 @@ Bundle 'gmarik/vundle'
 Bundle 'paulyg/Vim-PHP-Stuff'
 Bundle 'tobiassvn/vim-gemfile'
 Bundle 'tpope/vim-rails'
+Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on
