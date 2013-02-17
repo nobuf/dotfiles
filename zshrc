@@ -35,5 +35,12 @@ bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
 export NODE_PATH=/usr/local/lib/node_modules
+PATH="$PATH:$HOME/data/android-sdk-macosx/platform-tools"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+
+#export SMTPHOST=smtp.gmail.com
+#export SMTPUSER=webserver@alvaxot.com
+#export SMTPPSWD=xovertime
+alias vi='/usr/local/bin/vim'

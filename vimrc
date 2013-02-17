@@ -8,7 +8,7 @@ set hlsearch
 set hidden
 set expandtab
 set ts=2 sw=2 sts=2
-set clipboard+=unnamed
+"set clipboard+=unnamed
 set fo+=r
 set shortmess+=I
 set cindent
@@ -32,6 +32,9 @@ set dir=~/.vim/swap/
 set vb t_vb=
 syn on
 
+nnoremap <C-h> :BufSurfBack<CR>
+nnoremap <C-l> :BufSurfForward<CR>
+
 nnoremap ; :
 nnoremap : ;
 
@@ -53,7 +56,6 @@ inoremap { {}<LEFT><CR><ESC>O
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 
-
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -67,5 +69,9 @@ Bundle 'paulyg/Vim-PHP-Stuff'
 Bundle 'tobiassvn/vim-gemfile'
 Bundle 'tpope/vim-rails'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'beyondwords/vim-twig'
+Bundle 'ton/vim-bufsurf'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'hail2u/vim-css3-syntax'
 
 filetype plugin indent on
