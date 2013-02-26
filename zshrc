@@ -35,7 +35,7 @@ bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
 export NODE_PATH=/usr/local/lib/node_modules
-PATH="$PATH:$HOME/data/android-sdk-macosx/platform-tools"
+PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
