@@ -40,9 +40,6 @@ PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH:/Applications/adt-bundle
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 
-#export SMTPHOST=smtp.gmail.com
-#export SMTPUSER=webserver@alvaxot.com
-#export SMTPPSWD=xovertime
 alias vi='/usr/local/bin/vim'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
