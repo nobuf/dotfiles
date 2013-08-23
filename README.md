@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-sh install.sh
+./install.sh
