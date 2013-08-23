@@ -47,12 +47,12 @@ imap <C-k> <ESC><RIGHT>C
 imap ,/ </<C-X><C-O><ESC>F<i
 inoremap \[ [
 inoremap \{ {
-"inoremap \( (
+inoremap \( (
 inoremap \" "
 inoremap \' '
 inoremap [ []<LEFT>
 inoremap { {}<LEFT><CR><ESC>O
-"inoremap ( ()<LEFT>
+inoremap ( ()<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 
@@ -67,11 +67,29 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'paulyg/Vim-PHP-Stuff'
 Bundle 'tobiassvn/vim-gemfile'
-Bundle 'tpope/vim-rails'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'beyondwords/vim-twig'
 Bundle 'ton/vim-bufsurf'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'hail2u/vim-css3-syntax'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-markdown'
+Bundle 'PProvost/vim-markdown-jekyll'
+Bundle 'kien/ctrlp.vim'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on
+
+let g:syntastic_ruby_exec = '/Users/nobu/.rvm/rubies/ruby-1.9.2-p320/bin/ruby'
+
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }

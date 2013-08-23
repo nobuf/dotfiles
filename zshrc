@@ -35,7 +35,7 @@ bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
 export NODE_PATH=/usr/local/lib/node_modules
-PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
+PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH:/Applications/adt-bundle-mac-x86_64-20130219/sdk/tools/:/Applications/adt-bundle-mac-x86_64-20130219/sdk/platform-tools/"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
@@ -44,3 +44,8 @@ PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
 #export SMTPUSER=webserver@alvaxot.com
 #export SMTPPSWD=xovertime
 alias vi='/usr/local/bin/vim'
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:/usr/local/share/npm/lib/node_modules/bower/bin:$PATH"
