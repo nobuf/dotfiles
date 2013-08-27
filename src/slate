@@ -1,0 +1,12 @@
+alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
+bind e:cmd  ${showNormalHint}
+
+config defaultToCurrentScreen true
+# Shows app icons and background apps, spreads icons in the same place.
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+bind g:alt grid padding:5 0:4,1
+bind f:alt ${full}
