@@ -34,15 +34,9 @@ bindkey -e
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
+alias vi=vim
+
 export NODE_PATH=/usr/local/lib/node_modules
-PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH:/Applications/adt-bundle-mac-x86_64-20130219/sdk/tools/:/Applications/adt-bundle-mac-x86_64-20130219/sdk/platform-tools/"
+export PATH="/usr/local/heroku/bin:/usr/local/share/npm/lib/node_modules/bower/bin:$HOME/.rvm/bin:/usr/local/bin:$(brew --prefix josegonzalez/php/php54)/bin:/Applications/adt-bundle-mac-x86_64-20130219/sdk/tools/:/Applications/adt-bundle-mac-x86_64-20130219/sdk/platform-tools:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-
-alias vi='/usr/local/bin/vim'
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:/usr/local/share/npm/lib/node_modules/bower/bin:$PATH"
