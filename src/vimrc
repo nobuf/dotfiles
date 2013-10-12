@@ -1,5 +1,8 @@
 filetype off                   " required!
 
+" To get the rvm ruby instead of system ruby
+set shell=/bin/sh
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -26,6 +29,13 @@ Bundle "honza/vim-snippets"
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/nerdcommenter'
+"Bundle 'bronson/vim-runtest'
+"Bundle 'duskhacker/sweet-rspec-vim'
+"Bundle 'thoughtbot/vim-rspec'
+Bundle 'skwp/vim-rspec'
+Bundle 'tpope/vim-endwise'
+Bundle 'slim-template/vim-slim'
 
 filetype plugin indent on
 
@@ -69,6 +79,7 @@ syn on
 nnoremap <C-h> :BufSurfBack<CR>
 nnoremap <C-l> :BufSurfForward<CR>
 nnoremap <C-g> :Ack 
+nnoremap <C-b> :RunSpec<cr>
 
 nnoremap ; :
 nnoremap : ;
@@ -99,3 +110,5 @@ augroup reload_vimrc " {
 augroup END " }
 
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
+autocmd BufNewFile,BufRead ~/work/qdopp/* set tabstop=4 shiftwidth=4
+let g:ackprg = 'ag --nogroup --nocolor --column'
