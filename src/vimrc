@@ -9,14 +9,14 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
-Bundle 'paulyg/Vim-PHP-Stuff'
+"Bundle 'paulyg/Vim-PHP-Stuff'
 Bundle 'tobiassvn/vim-gemfile'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'beyondwords/vim-twig'
+"Bundle 'beyondwords/vim-twig'
 Bundle 'ton/vim-bufsurf'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'cakebaker/scss-syntax.vim'
+"Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
@@ -24,18 +24,20 @@ Bundle 'PProvost/vim-markdown-jekyll'
 Bundle 'kien/ctrlp.vim'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'scrooloose/syntastic'
+"Bundle "garbas/vim-snipmate"
+"Bundle "honza/vim-snippets"
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/nerdcommenter'
+"Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-commentary'
 "Bundle 'bronson/vim-runtest'
 "Bundle 'duskhacker/sweet-rspec-vim'
 "Bundle 'thoughtbot/vim-rspec'
 Bundle 'skwp/vim-rspec'
 Bundle 'tpope/vim-endwise'
 Bundle 'slim-template/vim-slim'
+Bundle 'vim-ruby/vim-ruby'
 
 filetype plugin indent on
 
@@ -74,6 +76,7 @@ set nobackup
 set dir=~/.vim/swap/
 set vb t_vb=
 set clipboard=unnamed
+set synmaxcol=150
 syn on
 
 nnoremap <C-h> :BufSurfBack<CR>
@@ -84,25 +87,25 @@ nnoremap <C-b> :RunSpec<cr>
 nnoremap ; :
 nnoremap : ;
 
-imap jj <ESC>
+"imap jj <ESC>
 imap <C-d> <DEL>
 imap <C-e> <END>
 imap <C-a> <HOME>
 imap <C-k> <ESC><RIGHT>C
 
-imap ,/ </<C-X><C-O><ESC>F<i
-inoremap \[ [
-inoremap \{ {
-inoremap \( (
-inoremap \" "
-inoremap \' '
+"imap ,/ </<C-X><C-O><ESC>F<i
+"inoremap \[ [
+"inoremap \{ {
+"inoremap \( (
+"inoremap \" "
+"inoremap \' '
 inoremap [ []<LEFT>
-inoremap { {}<LEFT><CR><ESC>O
+"inoremap { {}<LEFT><CR><ESC>O
 inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
 
-let g:syntastic_ruby_exec = '/Users/nobu/.rvm/rubies/ruby-1.9.3-p448/bin/ruby'
+"let g:syntastic_ruby_exec = '/Users/nobu/.rvm/rubies/ruby-1.9.3-p448/bin/ruby'
 
 augroup reload_vimrc " {
     autocmd!
@@ -110,5 +113,5 @@ augroup reload_vimrc " {
 augroup END " }
 
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
-autocmd BufNewFile,BufRead ~/work/qdopp/* set tabstop=4 shiftwidth=4
+"autocmd BufNewFile,BufRead ~/work/qdopp/* set tabstop=4 shiftwidth=4
 let g:ackprg = 'ag --nogroup --nocolor --column'

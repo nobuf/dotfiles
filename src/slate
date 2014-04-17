@@ -1,5 +1,5 @@
 alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
-bind e:cmd  ${showNormalHint}
+#bind e:cmd  ${showNormalHint}
 
 config defaultToCurrentScreen true
 # Shows app icons and background apps, spreads icons in the same place.
