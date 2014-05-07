@@ -1,7 +1,6 @@
+" https://github.com/square/maximum-awesome
+"
 filetype off                   " required!
-
-" To get the rvm ruby instead of system ruby
-set shell=/bin/sh
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -10,7 +9,7 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 "Bundle 'paulyg/Vim-PHP-Stuff'
-Bundle 'tobiassvn/vim-gemfile'
+"Bundle 'tobiassvn/vim-gemfile'
 Bundle 'kchmck/vim-coffee-script'
 "Bundle 'beyondwords/vim-twig'
 Bundle 'ton/vim-bufsurf'
@@ -28,7 +27,8 @@ Bundle "tomtom/tlib_vim"
 "Bundle "honza/vim-snippets"
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'scrooloose/syntastic'
-Bundle 'mileszs/ack.vim'
+" Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 "Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-commentary'
 "Bundle 'bronson/vim-runtest'
@@ -38,6 +38,14 @@ Bundle 'skwp/vim-rspec'
 Bundle 'tpope/vim-endwise'
 Bundle 'slim-template/vim-slim'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-fugitive'
+Bundle 'spf13/vim-autoclose'
+"Bundle 'bling/vim-airline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'pangloss/vim-javascript'
+" Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'tpope/vim-repeat'
+Bundle 'mustache/vim-mustache-handlebars'
 
 filetype plugin indent on
 
@@ -49,7 +57,7 @@ set fenc=utf-8
 set iminsert=0 imsearch=0
 set showcmd
 set incsearch
-set nocompatible
+"set nocompatible
 set hlsearch
 set hidden
 set expandtab
@@ -69,7 +77,7 @@ set ruler
 set nolist
 set wrap
 set laststatus=2
-set cmdheight=2
+set cmdheight=1
 set title
 set shortmess+=I
 set nobackup
@@ -79,13 +87,16 @@ set clipboard=unnamed
 set synmaxcol=150
 syn on
 
+let mapleader = ','
+
 nnoremap <C-h> :BufSurfBack<CR>
 nnoremap <C-l> :BufSurfForward<CR>
-nnoremap <C-g> :Ack 
-nnoremap <C-b> :RunSpec<cr>
+" nnoremap <C-g> :Ack 
+" nnoremap <C-b> :RunSpec<cr>
 
-nnoremap ; :
-nnoremap : ;
+nmap ; :
+"nnoremap : ;
+noremap ;; ;
 
 "imap jj <ESC>
 imap <C-d> <DEL>
@@ -99,9 +110,9 @@ imap <C-k> <ESC><RIGHT>C
 "inoremap \( (
 "inoremap \" "
 "inoremap \' '
-inoremap [ []<LEFT>
+"inoremap [ []<LEFT>
 "inoremap { {}<LEFT><CR><ESC>O
-inoremap ( ()<LEFT>
+"inoremap ( ()<LEFT>
 "inoremap " ""<LEFT>
 "inoremap ' ''<LEFT>
 
@@ -112,6 +123,28 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
-autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
+" autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
 "autocmd BufNewFile,BufRead ~/work/qdopp/* set tabstop=4 shiftwidth=4
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" let g:ackprg = 'ag --nogroup --nocolor --column'
+
+nmap <leader>a :Ag<space>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+nmap <leader>t :CtrlP<CR>
+nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+nmap <leader>c :ccl<CR>
+nmap <leader>p :set paste<CR>
+nmap <leader>P :set nopaste<CR>
+" nmap <leader>h :BufSurfBack<CR>
+" nmap <leader>l :BufSurfForward<CR>
+nmap <leader><space> :noh<CR>
+
+
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
