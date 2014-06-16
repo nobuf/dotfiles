@@ -8,8 +8,13 @@ config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
 
 alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+
 bind g:alt grid padding:5 0:4,1
 bind f:alt ${full}
-bind t:cmd;alt focus 'Terminal'
+bind t:cmd;alt focus 'iTerm'
 bind left:shift,ctrl throw 0 resize
 bind right:shift,ctrl throw 1 resize
+bind l:shift,ctrl ${lefthalf}
+bind r:shift,ctrl ${righthalf}
