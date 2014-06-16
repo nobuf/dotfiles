@@ -1,52 +1,55 @@
 " https://github.com/square/maximum-awesome
 "
+set shell=/bin/bash
+set nocompatible
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
-"Bundle 'paulyg/Vim-PHP-Stuff'
-"Bundle 'tobiassvn/vim-gemfile'
-Bundle 'kchmck/vim-coffee-script'
-"Bundle 'beyondwords/vim-twig'
-Bundle 'ton/vim-bufsurf'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'hail2u/vim-css3-syntax'
-" Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-markdown'
-Bundle 'PProvost/vim-markdown-jekyll'
-Bundle 'kien/ctrlp.vim'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-"Bundle "garbas/vim-snipmate"
-"Bundle "honza/vim-snippets"
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'scrooloose/syntastic'
-" Bundle 'mileszs/ack.vim'
-Bundle 'rking/ag.vim'
-"Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-commentary'
-"Bundle 'bronson/vim-runtest'
-"Bundle 'duskhacker/sweet-rspec-vim'
-"Bundle 'thoughtbot/vim-rspec'
-Bundle 'skwp/vim-rspec'
-Bundle 'tpope/vim-endwise'
-Bundle 'slim-template/vim-slim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-fugitive'
-Bundle 'spf13/vim-autoclose'
-Bundle 'scrooloose/nerdtree'
-Bundle 'pangloss/vim-javascript'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'tpope/vim-repeat'
-Bundle 'mustache/vim-mustache-handlebars'
-" Bundle 'bling/vim-airline'
+Plugin 'gmarik/Vundle.vim'
+"Plugin 'paulyg/Vim-PHP-Stuff'
+"Plugin 'tobiassvn/vim-gemfile'
+Plugin 'kchmck/vim-coffee-script'
+"Plugin 'beyondwords/vim-twig'
+Plugin 'ton/vim-bufsurf'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'hail2u/vim-css3-syntax'
+" Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-markdown'
+Plugin 'PProvost/vim-markdown-jekyll'
+Plugin 'kien/ctrlp.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+"Plugin "garbas/vim-snipmate"
+"Plugin "honza/vim-snippets"
+"Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'scrooloose/syntastic'
+" Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+"Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-commentary'
+"Plugin 'bronson/vim-runtest'
+"Plugin 'duskhacker/sweet-rspec-vim'
+"Plugin 'thoughtbot/vim-rspec'
+Plugin 'skwp/vim-rspec'
+Plugin 'tpope/vim-endwise'
+Plugin 'slim-template/vim-slim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-fugitive'
+Plugin 'spf13/vim-autoclose'
+Plugin 'scrooloose/nerdtree'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-repeat'
+Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'bling/vim-airline'
 
+call vundle#end()
 filetype plugin indent on
 
 
