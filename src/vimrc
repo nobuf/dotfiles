@@ -48,6 +48,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-repeat'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-haml'
 
 call vundle#end()
 filetype plugin indent on
@@ -90,7 +91,7 @@ set clipboard=unnamed
 set synmaxcol=150
 syn on
 
-let mapleader = ','
+let mapleader = ' '
 
 nnoremap <C-h> :BufSurfBack<CR>
 nnoremap <C-l> :BufSurfForward<CR>
@@ -139,9 +140,12 @@ nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nmap <leader>c :ccl<CR>
 nmap <leader>p :set paste<CR>
 nmap <leader>P :set nopaste<CR>
-" nmap <leader>h :BufSurfBack<CR>
-" nmap <leader>l :BufSurfForward<CR>
 nmap <leader><space> :noh<CR>
+nmap <leader>ga :Git add --all .<CR><CR>
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gc :Gcommit -a<CR>
+nmap <leader>h :BufSurfBack<CR>
+nmap <leader>l :BufSurfForward<CR>
 
 
 if executable('ag')
@@ -156,3 +160,9 @@ hi IndentGuidesOdd  ctermbg=gray
 hi IndentGuidesEven ctermbg=none
 
 " let g:airline#extensions#tabline#enabled = 1
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-c> <C-w>c

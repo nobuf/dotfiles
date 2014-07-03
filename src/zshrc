@@ -39,3 +39,5 @@ bindkey '^N' history-beginning-search-forward
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 [ -f ~/.zshrc.include ] && source ~/.zshrc.include
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
