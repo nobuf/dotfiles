@@ -28,7 +28,7 @@ Plugin 'tomtom/tlib_vim'
 "Plugin "garbas/vim-snipmate"
 "Plugin "honza/vim-snippets"
 "Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 "Plugin 'scrooloose/nerdcommenter'
@@ -93,8 +93,8 @@ syn on
 
 let mapleader = ' '
 
-nnoremap <C-h> :BufSurfBack<CR>
-nnoremap <C-l> :BufSurfForward<CR>
+" nnoremap <C-h> :BufSurfBack<CR>
+" nnoremap <C-l> :BufSurfForward<CR>
 " nnoremap <C-g> :Ack 
 " nnoremap <C-b> :RunSpec<cr>
 
@@ -156,8 +156,10 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-hi IndentGuidesOdd  ctermbg=gray
-hi IndentGuidesEven ctermbg=none
+" hi IndentGuidesOdd  ctermbg=gray
+" hi IndentGuidesEven ctermbg=none
+hi Pmenu ctermbg=gray ctermfg=black
+hi PmenuSel ctermbg=blue ctermfg=white
 
 " let g:airline#extensions#tabline#enabled = 1
 
@@ -166,3 +168,6 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-c> <C-w>c
+
+" set background=light
+" colorscheme solarized
