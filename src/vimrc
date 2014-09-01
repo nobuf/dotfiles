@@ -23,6 +23,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-markdown'
 Plugin 'PProvost/vim-markdown-jekyll'
 Plugin 'kien/ctrlp.vim'
+Plugin 'jasoncodes/ctrlp-modified.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 "Plugin "garbas/vim-snipmate"
@@ -49,6 +50,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-haml'
+Plugin 'terryma/vim-expand-region'
+Plugin 'sjl/gundo.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 filetype plugin indent on
@@ -89,6 +93,7 @@ set dir=~/.vim/swap/
 set vb t_vb=
 set clipboard=unnamed
 set synmaxcol=150
+" set lazyredraw
 syn on
 
 let mapleader = ' '
@@ -132,21 +137,27 @@ augroup END " }
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 
 nmap <leader>a :Ag<space>
-nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>d :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>t :CtrlP<CR>
 nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nmap <leader>c :ccl<CR>
 nmap <leader>p :set paste<CR>
 nmap <leader>P :set nopaste<CR>
 nmap <leader><space> :noh<CR>
+nmap <leader>u :GundoToggle<CR>
 nmap <leader>ga :Git add --all .<CR><CR>
 nmap <leader>gs :Gstatus<CR>
-nmap <leader>gc :Gcommit -a<CR>
+nmap <leader>gc :Git add --all .<CR><CR>:Gcommit -a<CR>
 nmap <leader>h :BufSurfBack<CR>
 nmap <leader>l :BufSurfForward<CR>
+nmap <leader>m :CtrlPModified<CR>
+nmap <leader>fa :CtrlP app/assets<CR>
+nmap <leader>fm :CtrlP app/models<CR>
+nmap <leader>fc :CtrlP app/controllers<CR>
+nmap <leader>fv :CtrlP app/views<CR>
+nmap <leader>w :w<CR>
 
+let g:ctrlp_working_path_mode = 0
 
 if executable('ag')
   " Use Ag over Grep
@@ -163,10 +174,10 @@ hi PmenuSel ctermbg=blue ctermfg=white
 
 " let g:airline#extensions#tabline#enabled = 1
 
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+" noremap <C-h> <C-w>h
+" noremap <C-j> <C-w>j
+" noremap <C-k> <C-w>k
+" noremap <C-l> <C-w>l
 noremap <C-c> <C-w>c
 
 " set background=light
