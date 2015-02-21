@@ -2,60 +2,43 @@
 "
 set shell=/bin/bash
 set nocompatible
-filetype off                   " required!
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle
-" required! 
-Plugin 'gmarik/Vundle.vim'
-"Plugin 'paulyg/Vim-PHP-Stuff'
-"Plugin 'tobiassvn/vim-gemfile'
-Plugin 'kchmck/vim-coffee-script'
-"Plugin 'beyondwords/vim-twig'
-Plugin 'ton/vim-bufsurf'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'hail2u/vim-css3-syntax'
-" Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-markdown'
-Plugin 'PProvost/vim-markdown-jekyll'
-Plugin 'kien/ctrlp.vim'
-Plugin 'jasoncodes/ctrlp-modified.vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-"Plugin "garbas/vim-snipmate"
-"Plugin "honza/vim-snippets"
-"Plugin 'Lokaltog/vim-easymotion'
-Plugin 'scrooloose/syntastic'
-" Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
-"Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-commentary'
-"Plugin 'bronson/vim-runtest'
-"Plugin 'duskhacker/sweet-rspec-vim'
-"Plugin 'thoughtbot/vim-rspec'
-Plugin 'skwp/vim-rspec'
-Plugin 'tpope/vim-endwise'
-Plugin 'slim-template/vim-slim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-fugitive'
-Plugin 'spf13/vim-autoclose'
-Plugin 'scrooloose/nerdtree'
-Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'tpope/vim-repeat'
-Plugin 'mustache/vim-mustache-handlebars'
-" Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-haml'
-Plugin 'terryma/vim-expand-region'
-Plugin 'sjl/gundo.vim'
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'kchmck/vim-coffee-script'
+Plug 'ton/vim-bufsurf'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-markdown'
+Plug 'PProvost/vim-markdown-jekyll'
+Plug 'kien/ctrlp.vim'
+Plug 'jasoncodes/ctrlp-modified.vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'rking/ag.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'slim-template/vim-slim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-fugitive'
+Plug 'spf13/vim-autoclose'
+Plug 'scrooloose/nerdtree'
+Plug 'pangloss/vim-javascript'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-repeat'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'tpope/vim-haml'
+Plug 'terryma/vim-expand-region'
+Plug 'sjl/gundo.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'whatyouhide/vim-gotham'
+Plug 'rhysd/clever-f.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'ivalkeen/vim-simpledb'
+Plug 'hhvm/vim-hack'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
@@ -95,6 +78,12 @@ set clipboard=unnamed
 set synmaxcol=150
 " set lazyredraw
 syn on
+" XXX are these working?
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+set tags+=gems.tags
+set mouse=a
 
 let mapleader = ' '
 
@@ -112,6 +101,7 @@ imap <C-d> <DEL>
 imap <C-e> <END>
 imap <C-a> <HOME>
 imap <C-k> <ESC><RIGHT>C
+imap <C-[> <ESC>lv$hS)
 
 "imap ,/ </<C-X><C-O><ESC>F<i
 "inoremap \[ [
@@ -127,10 +117,10 @@ imap <C-k> <ESC><RIGHT>C
 
 "let g:syntastic_ruby_exec = '/Users/nobu/.rvm/rubies/ruby-1.9.3-p448/bin/ruby'
 
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+" augroup reload_vimrc " {
+"     autocmd!
+"     autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" augroup END " }
 
 " autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
 "autocmd BufNewFile,BufRead ~/work/qdopp/* set tabstop=4 shiftwidth=4
@@ -156,6 +146,8 @@ nmap <leader>fm :CtrlP app/models<CR>
 nmap <leader>fc :CtrlP app/controllers<CR>
 nmap <leader>fv :CtrlP app/views<CR>
 nmap <leader>w :w<CR>
+nmap <leader>- <C-w>s
+nmap <leader>\ <C-w>v
 
 let g:ctrlp_working_path_mode = 0
 
@@ -180,5 +172,5 @@ hi PmenuSel ctermbg=blue ctermfg=white
 " noremap <C-l> <C-w>l
 noremap <C-c> <C-w>c
 
-" set background=light
-" colorscheme solarized
+vmap <Enter> <Plug>(EasyAlign)
+" nmap <Leader>a <Plug>(EasyAlign)
