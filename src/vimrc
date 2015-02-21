@@ -87,44 +87,13 @@ set mouse=a
 
 let mapleader = ' '
 
-" nnoremap <C-h> :BufSurfBack<CR>
-" nnoremap <C-l> :BufSurfForward<CR>
-" nnoremap <C-g> :Ack 
-" nnoremap <C-b> :RunSpec<cr>
-
 nmap ; :
-"nnoremap : ;
 noremap ;; ;
 
-"imap jj <ESC>
 imap <C-d> <DEL>
 imap <C-e> <END>
 imap <C-a> <HOME>
 imap <C-k> <ESC><RIGHT>C
-imap <C-[> <ESC>lv$hS)
-
-"imap ,/ </<C-X><C-O><ESC>F<i
-"inoremap \[ [
-"inoremap \{ {
-"inoremap \( (
-"inoremap \" "
-"inoremap \' '
-"inoremap [ []<LEFT>
-"inoremap { {}<LEFT><CR><ESC>O
-"inoremap ( ()<LEFT>
-"inoremap " ""<LEFT>
-"inoremap ' ''<LEFT>
-
-"let g:syntastic_ruby_exec = '/Users/nobu/.rvm/rubies/ruby-1.9.3-p448/bin/ruby'
-
-" augroup reload_vimrc " {
-"     autocmd!
-"     autocmd BufWritePost $MYVIMRC source $MYVIMRC
-" augroup END " }
-
-" autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
-"autocmd BufNewFile,BufRead ~/work/qdopp/* set tabstop=4 shiftwidth=4
-" let g:ackprg = 'ag --nogroup --nocolor --column'
 
 nmap <leader>a :Ag<space>
 nmap <leader>d :NERDTreeToggle<CR>
@@ -135,8 +104,6 @@ nmap <leader>p :set paste<CR>
 nmap <leader>P :set nopaste<CR>
 nmap <leader><space> :noh<CR>
 nmap <leader>u :GundoToggle<CR>
-nmap <leader>ga :Git add --all .<CR><CR>
-nmap <leader>gs :Gstatus<CR>
 nmap <leader>gc :Git add --all .<CR><CR>:Gcommit -a<CR>
 nmap <leader>h :BufSurfBack<CR>
 nmap <leader>l :BufSurfForward<CR>
@@ -149,6 +116,9 @@ nmap <leader>w :w<CR>
 nmap <leader>- <C-w>s
 nmap <leader>\ <C-w>v
 
+noremap <C-c> <C-w>c
+vmap <Enter> <Plug>(EasyAlign)
+
 let g:ctrlp_working_path_mode = 0
 
 if executable('ag')
@@ -159,18 +129,5 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" hi IndentGuidesOdd  ctermbg=gray
-" hi IndentGuidesEven ctermbg=none
 hi Pmenu ctermbg=gray ctermfg=black
 hi PmenuSel ctermbg=blue ctermfg=white
-
-" let g:airline#extensions#tabline#enabled = 1
-
-" noremap <C-h> <C-w>h
-" noremap <C-j> <C-w>j
-" noremap <C-k> <C-w>k
-" noremap <C-l> <C-w>l
-noremap <C-c> <C-w>c
-
-vmap <Enter> <Plug>(EasyAlign)
-" nmap <Leader>a <Plug>(EasyAlign)
