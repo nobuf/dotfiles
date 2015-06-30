@@ -1,11 +1,12 @@
 " colorscheme midnight2
-set background=dark
+set background=light
 colorscheme solarized
 " set gfn=DejaVu\ Sans\ Mono:h14
 " set gfn=Source\ Code\ Pro\ Medium:h16
-set gfn=Monaco:h14
+" set gfn=Monaco:h12
+set gfn=Ubuntu\ Mono:h16
 set columns=120
 set lines=80
-set linespace=3
-set guioptions-=T
-set guioptions+=b
+set linespace=2
+set guioptions-=L
+set guioptions-=r

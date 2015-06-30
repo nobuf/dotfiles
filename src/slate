@@ -9,12 +9,16 @@ config windowHintsSpread true
 
 alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
 alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
-alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX*0.5;screenOriginY screenSizeX*0.5;screenSizeY
+alias onethird move screenOriginX+screenSizeX*0.7;screenOriginY screenSizeX*0.3;screenSizeY
+alias twothird move screenOriginX+screenSizeX*0.3;screenOriginY screenSizeX*0.7;screenSizeY
 
 bind g:alt grid padding:5 0:4,1
 bind f:alt ${full}
 bind t:cmd;alt focus 'iTerm'
 bind left:shift,ctrl throw 0 resize
 bind right:shift,ctrl throw 1 resize
+bind 3:shift,ctrl ${twothird}
+bind 1:shift,ctrl ${onethird}
 bind l:shift,ctrl ${lefthalf}
 bind r:shift,ctrl ${righthalf}

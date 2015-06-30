@@ -1,89 +1,68 @@
-" https://github.com/square/maximum-awesome
-"
-set shell=/bin/bash
-set nocompatible
-
 call plug#begin('~/.vim/plugged')
 
-Plug 'kchmck/vim-coffee-script'
-Plug 'ton/vim-bufsurf'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-markdown'
-Plug 'PProvost/vim-markdown-jekyll'
 Plug 'kien/ctrlp.vim'
-Plug 'jasoncodes/ctrlp-modified.vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
 Plug 'rking/ag.vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'slim-template/vim-slim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-fugitive'
-Plug 'spf13/vim-autoclose'
-Plug 'scrooloose/nerdtree'
-Plug 'pangloss/vim-javascript'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'tpope/vim-repeat'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'tpope/vim-haml'
+Plug 'ton/vim-bufsurf'
+Plug 'Townk/vim-autoclose'
 Plug 'terryma/vim-expand-region'
-Plug 'sjl/gundo.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'whatyouhide/vim-gotham'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+
+" clever-f.vim extends f
 Plug 'rhysd/clever-f.vim'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/vim-easy-align'
-Plug 'ivalkeen/vim-simpledb'
-Plug 'hhvm/vim-hack'
+
+" Plug 'hhvm/vim-hack'
+Plug 'StanAngeloff/php.vim'
 
 call plug#end()
 
-
-set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
+set vb t_vb=
 set autoread
 set enc=utf-8
 set fenc=utf-8
 set iminsert=0 imsearch=0
 set showcmd
 set incsearch
-"set nocompatible
 set hlsearch
 set hidden
+" noeol doesn't work without binary
+" set binary
+" set noeol
 set expandtab
-set ts=2 sw=2 sts=2
+set ts=4 sw=4 sts=4
 set fo+=r
 set shortmess+=I
 set cindent
 set ignorecase
 set smartcase
-set backspace=2
+"set backspace=4
 set wrapscan
 set showmatch
 set wildmenu
 set formatoptions+=mM
 set number
-set ruler
+" set ruler
 set nolist
 set wrap
 set laststatus=2
 set cmdheight=1
 set title
-set shortmess+=I
 set nobackup
-set dir=~/.vim/swap/
-set vb t_vb=
+set nowritebackup
+set noswapfile
+" set dir=~/.vim/swap/
 set clipboard=unnamed
-set synmaxcol=150
+" set synmaxcol=150
 " set lazyredraw
 syn on
-" XXX are these working?
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
-set tags+=gems.tags
-set mouse=a
+" set tags+=gems.tags
+" set mouse=a
+set colorcolumn=80
 
 let mapleader = ' '
 
@@ -97,27 +76,27 @@ imap <C-k> <ESC><RIGHT>C
 
 nmap <leader>a :Ag<space>
 nmap <leader>d :NERDTreeToggle<CR>
-nmap <leader>t :CtrlP<CR>
+" nmap <leader>t :CtrlP<CR>
 nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nmap <leader>c :ccl<CR>
 nmap <leader>p :set paste<CR>
 nmap <leader>P :set nopaste<CR>
 nmap <leader><space> :noh<CR>
-nmap <leader>u :GundoToggle<CR>
+" nmap <leader>u :GundoToggle<CR>
 nmap <leader>gc :Git add --all .<CR><CR>:Gcommit -a<CR>
 nmap <leader>h :BufSurfBack<CR>
 nmap <leader>l :BufSurfForward<CR>
-nmap <leader>m :CtrlPModified<CR>
-nmap <leader>fa :CtrlP app/assets<CR>
-nmap <leader>fm :CtrlP app/models<CR>
-nmap <leader>fc :CtrlP app/controllers<CR>
-nmap <leader>fv :CtrlP app/views<CR>
+" nmap <leader>m :CtrlPModified<CR>
+" nmap <leader>fa :CtrlP app/assets<CR>
+" nmap <leader>fm :CtrlP app/models<CR>
+" nmap <leader>fc :CtrlP app/controllers<CR>
+" nmap <leader>fv :CtrlP app/views<CR>
 nmap <leader>w :w<CR>
-nmap <leader>- <C-w>s
-nmap <leader>\ <C-w>v
+" nmap <leader>- <C-w>s
+" nmap <leader>\ <C-w>v
 
 noremap <C-c> <C-w>c
-vmap <Enter> <Plug>(EasyAlign)
+" vmap <Enter> <Plug>(EasyAlign)
 
 let g:ctrlp_working_path_mode = 0
 
@@ -129,5 +108,11 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-hi Pmenu ctermbg=gray ctermfg=black
-hi PmenuSel ctermbg=blue ctermfg=white
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" syntax enable
+" set t_Co=256
+" let g:solarized_termcolors=256
+colorscheme solarized
+" set background=light
+
+au BufRead,BufNewFile *.psh setfiletype php
