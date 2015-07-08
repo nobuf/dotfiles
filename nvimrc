@@ -114,13 +114,13 @@ endif
 syntax enable
 " set t_Co=256
 " let g:solarized_termcolors=256
-" set background=dark
-" colorscheme solarized
+set background=dark
+colorscheme solarized
 
-au BufRead,BufNewFile *.psh setfiletype php
+au BufRead,BufNewFile *.psh,*.php setfiletype php
 
 " set term=screen-256color-bce
 " let g:solarized_termcolors=256
 " set t_Co=256
-set background=dark
-colorscheme default 
+" set background=dark
+" colorscheme default 
